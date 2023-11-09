@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavList from "../components/navbar/NavList";import LogoImg from "../components/navbar/LogoImg";
 
 //import axiosClient from "../axios";
-//import { CheckBadgeIcon, ArrowRightOnRectangleIcon, EllipsisHorizontalIcon, } from "@heroicons/react/24/solid";
+import { CheckBadgeIcon, ArrowRightOnRectangleIcon, EllipsisHorizontalIcon, } from "@heroicons/react/24/solid";
 import {  UserIcon } from "@heroicons/react/24/solid";
 
 export default function NavBarMain() {
@@ -22,6 +22,18 @@ export default function NavBarMain() {
             type: "Item",      
             title: "Home", 
             href: "/",
+            customClass: "hover:bg-white hover:text-black rounded",
+        },
+        { 
+            type: "Item",      
+            title: "O Club", 
+            href: "/",
+            customClass: "hover:bg-white hover:text-black rounded",
+        },
+        { 
+            type: "Item",      
+            title: "Calculadora", 
+            href: "/calculator",
             customClass: "hover:bg-white hover:text-black rounded",
         },
         /*{ 
@@ -49,24 +61,24 @@ export default function NavBarMain() {
             type: "Item",
             title: "Meu Perfil", 
             icon: UserIcon,
-            href: "/",
-            //href: "/user-profile",
+
+            href: "/user-profile",
             customClass: "hover:bg-white hover:text-black  mr-2 rounded",
         },
-        /*{ 
+        { 
             type: "Item",
             title: "Sair", 
             icon: ArrowRightOnRectangleIcon,
             onClick: (ev) => logout(ev),
             customClass: "hover:bg-white hover:text-black bg-red-600 rounded",
-        },*/
+        },
     ]
 
   return (
-        <Disclosure as="nav" className="bg-orange-500">
+        <Disclosure as="nav" className="bg-neutral-900 ">
             {({ open }) => (
                 <>
-                    <Navbar className="mx-auto max-w-screen-xl px-4 py-2 bg-orange-500 border-none shadow-none">
+                    <Navbar className="mx-auto max-w-screen-xl px-4 py-2 bg-neutral-900 border-none shadow-none">
                         <div className="flex items-center justify-between ">
                             <div className="hidden lg:block">
                                 <NavList details={ navigation }/>
@@ -75,7 +87,7 @@ export default function NavBarMain() {
                                 <NavList details={ profileMenu }/>
                             </div>
 
-                            <Navbar className="md:hidden ms:flex mx-auto max-w-screen-xl px-4 py-2 bg-orange-500 border-none shadow-none">
+                            <Navbar className="md:hidden ms:flex mx-auto max-w-screen-xl px-4 py-2 bg-neutral-900 border-none shadow-none">
                                 <div className="flex justify-between text-blue-gray-900">
                                     <>
                                         <LogoImg src="/images/logo1.png" alt="F13 GamersClub" customClass=" " />
@@ -100,17 +112,17 @@ export default function NavBarMain() {
                         <div className="border-t border-gray-700">
                             <div className="flex items-center justify-center mt-3 space-y-1 px-2">
                                 <Disclosure.Button as="a" href="/" className="rounded-md px-3 py-2">
-                                    <Button className="hover:bg-gray-700 hover:text-white">
-                                        <UserIcon className="h-6 w-6 ml-4 mb-2"/> Meu Perfil
+                                    <Button className="hover:bg-[#685e3f] bg-[#918257] hover:text-white text-white px-2">
+                                        <UserIcon className="h-6 w-6 ml-7 mb-2"/> Meu Perfil
                                     </Button>
                                 </Disclosure.Button>
-                                {/*
-                                    <Disclosure.Button as="a" href="/" onClick={(ev) => logout(ev)} className="rounded-md px-3 py-2 ">
+                                {
+                                    <Disclosure.Button as="a" href="/" onClick={(ev) => logout(ev)} className="rounded-md px-3 py-2">
                                         <Button className="hover:bg-red-700 bg-red-600 hover:text-white mb-1">
-                                            <ArrowRightOnRectangleIcon className="h-6 w-6 mb-2"/> Sair
+                                            <ArrowRightOnRectangleIcon className="h-6 w-6 ml-8 mr-7 mb-2"/> Sair
                                         </Button>
                                     </Disclosure.Button>
-                                */}
+                                }
                             </div>
                         </div>
                     </Disclosure.Panel>

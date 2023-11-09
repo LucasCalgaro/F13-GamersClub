@@ -13,7 +13,7 @@ export default function LogoImg({alt, src, customClass}) {
           className={`${customClass} font-medium white`}
         >
             <img
-                className="h-12 w-20"
+                className="h-9 w-24"
                 src={ src }
                 alt={ alt }/>
         </Typography>

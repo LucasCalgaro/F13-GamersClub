@@ -6,7 +6,7 @@ import Toast from "../components/Toast";
 export default function MainMenu() {
 
     return (
-        <div className="min-h-full">
+        <div className="min-h-full h-full">
             <NarBarMain />
             <Outlet />
             <Toast />

@@ -9,9 +9,11 @@ import MainMenu         from "./layouts/MainMenu";
 //import Signup           from "./views/Signup";
 //import ForgotPassword   from "./views/ForgotPassword";
 //import ResetPassword    from "./views/ResetPassword";
+import Index            from "./views/Index";
 import UserProfile      from "./views/UserProfile";
 import NotFound         from './views/NotFound';
 import AccessDenied     from "./views/AccessDenied"; // Importe o componente
+import Calculator from "./views/Calculator";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <NotFound />
+        element: <Index />
+      },
+      {
+        path: '/calculator',
+        element: <Calculator />
       },
       /*{
         path: "/",
